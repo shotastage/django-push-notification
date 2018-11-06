@@ -8,6 +8,7 @@ django = "*"
 
 [dev-packages]
 pylint = "*"
+django-mirage = "*"
 
 [requires]
 python_version = "3.7"
