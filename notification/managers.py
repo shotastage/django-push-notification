@@ -11,3 +11,14 @@ class AppleNotificationDeviceManager(models.Manager):
         )
 
         return new
+
+
+class AndroidNotificationDeviceManager(models.Manager):
+
+    def register(self, token, version):
+        new = self.create(
+            token = token,
+            version = version,
+        )
+
+        return new

@@ -1,8 +1,8 @@
 from django.db import models
 from notification.managers import (
-    AppleNotificationDeviceManager
+    AppleNotificationDeviceManager,
+    AndroidNotificationDeviceManager,
 )
-# Create your models here.
 
 
 class NotificationQueue(models.Model):
@@ -44,8 +44,23 @@ class AppleNotificationDevices(models.Model):
 
 
 class AndroidNotificationDevices(models.Model):
+
+    ANDROID_VERSIONS = (
+      ('2.3', 'Gingerbread'),
+      ('3.0', 'Honeycomb'),
+      ('4.0', 'Ice Cream Sandwich'),
+      ('4.1', 'Jelly Bean'),
+      ('4.4', 'Kit Kat'),
+      ('5.0', 'Lollipop'),
+      ('6.0', 'Marshmallow'),
+      ('7.0', 'Nougat'),
+      ('8.0', 'Oreo'),
+      ('9.0', 'Pie'),
+    )
+
     token = models.CharField(max_length = 255)
-    version = models.CharField(max_length = 255)
-    device = models.CharField(max_length = 255)
+    version = models.CharField(max_length = 10, choices=ANDROID_VERSIONS)
     registered_at = models.DateTimeField()
     is_disabled = models.BooleanField(default=False)
+
+    objects = AndroidNotificationDeviceManager()
