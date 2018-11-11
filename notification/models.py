@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from notification.managers import (
     AppleNotificationDeviceManager,
@@ -37,7 +38,7 @@ class AppleNotificationDevices(models.Model):
     token = models.CharField(max_length = 255)
     version = models.IntegerField(choices=IOS_VERSIONS)
     device = models.CharField(max_length = 10, choices=IOS_DEVICES)
-    registered_at = models.DateTimeField()
+    registered_at = models.DateTimeField(default=datetime.now)
     is_disabled = models.BooleanField(default=False)
 
     objects = AppleNotificationDeviceManager()
@@ -60,7 +61,7 @@ class AndroidNotificationDevices(models.Model):
 
     token = models.CharField(max_length = 255)
     version = models.CharField(max_length = 10, choices=ANDROID_VERSIONS)
-    registered_at = models.DateTimeField()
+    registered_at = models.DateTimeField(default=datetime.now)
     is_disabled = models.BooleanField(default=False)
 
     objects = AndroidNotificationDeviceManager()

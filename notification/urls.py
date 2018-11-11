@@ -1,6 +1,8 @@
 from django.urls import path
-from notification.views import YOUR_VIEW_CLASSES
+from notification.views import (
+    RegisterDeviceView,
+)
 
 urlpatterns = [
-    # path('url_letter/', YOUR_VIEW_CLASS.as_view(), name='starts'),
+    path('device/token/', RegisterDeviceView.as_view(), name='starts'),
 ]
