@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-rest-framework = "*"
+mirageframework = {git = "https://github.com/shotastage/mirageframework.git"}
 
 [dev-packages]
 pylint = "*"

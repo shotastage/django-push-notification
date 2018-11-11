@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "41da1c9a2f898424a955485806b382752e305910c8aba48926f021a97e4777cd"
+            "sha256": "6c2afa842956df37890b03bf063ddfea046e561e58574616faacdbb23d52d98e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -37,6 +37,10 @@
                 "sha256:63f76cbe1e7d12b94c357d7e54401103b2e52aef0f7c1650d6c820ad708776e5"
             ],
             "version": "==3.9.0"
+        },
+        "mirageframework": {
+            "git": "https://github.com/shotastage/mirageframework.git",
+            "ref": "623730f5e37b86d990160ee3fc5566de2025a575"
         },
         "pytz": {
             "hashes": [
